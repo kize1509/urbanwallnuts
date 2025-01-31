@@ -1,0 +1,167 @@
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUnderline {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUnderline {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+  }
+
+.hero{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    background:
+    url('../../assets/wallnutTree.svg') no-repeat center center/cover;
+    .hero-img-container{
+        width: 50%;
+        height: 100%;
+        
+        background:
+        linear-gradient(to right, rgba(#eeebd8, 1) 86%, rgba(#eeebd8, 0.6) );
+    
+    }
+    
+
+    .hero-content {
+        position: relative;
+        background-color: #f0e4d4;
+        user-select: none;
+        width: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    
+        .hero-title {
+          font-size: 3.2rem;
+          font-weight: 700;
+          letter-spacing: -0.025em;
+          color: #111827;
+          position: relative;
+          animation: fadeInUp 0.8s ease-out forwards;
+    
+          span {
+            background-color: #f3ec78;
+            background-image: linear-gradient(to top, rgba(#f1a239,1) 16%, rgba(#9da639,1) 100%);
+            background-size: 100%;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+            -moz-text-fill-color: transparent;
+            display: inline-block;
+            transition: transform 0.3s ease;
+    
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+    
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            height: 3px;
+            width: 0;
+            background-color:   #f1a239;
+            transition: width 0.5s ease;
+          }
+    
+          &:hover::after {
+            width: 100%;
+          }
+        }
+    
+        .hero-subtitle {
+            margin: 0;
+          font-size: 1rem;
+          color: #4b5563;
+          font-weight: 300;
+          letter-spacing: 0.025em;
+          animation: fadeInUp 0.8s ease-out 0.2s forwards;
+          opacity: 0; // Start invisible for animation
+        }
+
+        .link-button{
+            top: 100%;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                width: 30%;
+                transition: transform 0.3s ease;
+                
+                &:hover {
+                  animation: shake 0.5s infinite;
+                }
+
+        }
+    }
+      }
+    }
+    
+    // Optional: Add media queries for responsiveness
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+    
+        .hero-img-container,
+        .hero-content {
+          width: 100%;
+        }
+    
+        .hero-content {
+          .hero-title {
+            font-size: 2.5rem;
+          }
+    
+          .hero-subtitle {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
